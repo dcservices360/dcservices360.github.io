@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19-pr16">
+
+    
+  <!-- Spot Style - Default Point Spot Style -->
+
+
+  <style name="IconDefaultPointSpotStyle"
+         url="%FIRSTXML%/spots/hotspot_plan_sequence_user_defaultpoint0.png"
+         visible="false"
+         frame="0"
+         lastframe="9"
+         framewidth="67"
+         frameheight="67"
+         stopspotsequence="false"
+         crop="0|0|67|67"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconDefaultPointSpotStyle"
+         onout="onoutIconDefaultPointSpotStyle"
+
+
+         />
+  <action name="onhoverIconDefaultPointSpotStyle">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoutIconDefaultPointSpotStyle">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+  <!-- unsupported kind of display : PointMap -->
+
+
+<!-- ********** -->
+<!-- Logo -->
+<!-- id : logo -->
+<!-- ********** -->
+
+
+
+
+
+<!-- ********** -->
+<!-- Logo1 -->
+<!-- id : logo1 -->
+<!-- ********** -->
+
+
+  <hotspot ath="0" atv="90"
+         zorder="0"
+         name="logo1"
+         keep="true"
+         visible="false"
+         capture="false"
+         url="%FIRSTXML%/graphics/logo1/daiman.jpg" 
+         handcursor="false"
+
+         height="400"
+         width="400"
+
+         />
+
+  <events name="logo1events" 
+    onTourStart="showlogo1();"
+    keep="true" />
+
+  <action name="hidelogo1">
+    set(hotspot[logo1].visible, false);
+  </action>
+  <action name="showlogo1">
+      set(hotspot[logo1].visible, true);
+  </action>
+
+    <events name="logo1rotationevents" onviewchanged="updatelogo1rotation" keep="true"/>
+    <action name="updatelogo1rotation">
+        copy(hotspot[logo1].rz, view.hlookat);
+    </action>
+
+
+  <events name="logo1showevents" onremovepano="hidelogo1" onPanoStart="showlogo1" keep="true"/>
+
+
+
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+  <!-- FLOORPLAN -->
+  <action name="hideFloorplan">set(tour_displayfloorplan, false);events.dispatch(onhidetourfloorplan);</action>
+  <action name="showFloorplan">set(tour_displayfloorplan, true); events.dispatch(onshowtourfloorplan);</action>
+
+
+</krpano>
