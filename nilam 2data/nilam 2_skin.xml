@@ -61,12 +61,13 @@
 			<option name="title_color" value="000000" type="string" />
 			<option name="display_orientation" value="true" type="bool" />
 			<option name="display_radar" value="true" type="bool" />
-			<option name="radar_radius" value="50" type="int" />
+			<option name="radar_radius" value="30" type="int" />
 			<option name="radar_line_width" value="1" type="int" />
 			<option name="radar_line_color" value="ffffff" type="string" />
 			<option name="radar_line_alpha" value="0.50000762951094835" type="float" />
 			<option name="radar_fill_color" value="ffffff" type="string" />
 			<option name="radar_fill_alpha" value="0.30000762951094834" type="float" />
+			<option name="selected_effect" value="bounce" type="string" />
 			<option name="close_on_click" value="false" type="bool" />
 			<option name="position" value="bottomleft" type="string" />
 			<option name="zorder" value="1" type="int" />
@@ -84,7 +85,7 @@
 								url="floorplan/pn---floor-plan_typeb-ground-v1_panogroup111.jpg" 
 								title="panogroup111_floor_title"
 								heading="0">
-										<spot name="spotmap1061" posX="0.645093977" posY="0.767391026" heading="0" desc="spotmap1061_tooltip" descType="tooltip" groupName="" isScene="true" planar="false" scene="pano88" jsClick="spotmap1061ActionSpotFloorPlan">
+										<spot name="spotmap1061" posX="0.645093977" posY="0.767391026" heading="173.00000000000051" desc="spotmap1061_tooltip" descType="tooltip" groupName="" isScene="true" planar="false" scene="pano88" jsClick="spotmap1061ActionSpotFloorPlan">
 											<icon url="spots/hotspot_neutral_user_defaultmap0.png" iconWidth="32" iconHeight="32" iconAnchor="center" />
 										</spot>
 										<spot name="spotmap1062" posX="0.636743009" posY="0.606522024" heading="0" desc="spotmap1062_tooltip" descType="tooltip" groupName="" isScene="true" planar="false" scene="pano91" jsClick="spotmap1062ActionSpotFloorPlan">
@@ -476,7 +477,7 @@
 		<option name="title_weight" value="normal" type="string" />
 		<option name="title_decoration" value="normal" type="string" />
 		<option name="title_color" value="000000" type="string" />
-		<option name="close_displayed" value="false" type="bool" />
+		<option name="close_displayed" value="true" type="bool" />
 		<option name="close_text" value="floorPlandisplay_close_text" type="string" />
 
 		<option name="background_color" value="f2f2f2" type="string" />
@@ -666,14 +667,14 @@ getmessage(urltoopen,logo1websiteurl);openurl(get(urltoopen),_blank);
 
 
 
-  <!-- Hide / Show Controls -->
-  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
-  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
-
-
   <!-- FLOORPLAN -->
   <action name="hideFloorplan">set(tour_displayfloorplan, false);events.dispatch(onhidetourfloorplan);</action>
   <action name="showFloorplan">set(tour_displayfloorplan, true); events.dispatch(onshowtourfloorplan);</action>
+
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
 
 
 </krpano>
